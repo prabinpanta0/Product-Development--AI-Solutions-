@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply transition-colors duration-200;
+  }
+  
+  .dark {
+    @apply bg-gray-900 text-gray-100;
+  }
+  
+  .dark .card {
+    @apply bg-gray-800 border-gray-700;
+  }
+  
+  .dark .input {
+    @apply bg-gray-800 border-gray-700 text-white;
+  }
+  
+  .dark .button {
+    @apply bg-gray-700 hover:bg-gray-600;
+  }
+}
