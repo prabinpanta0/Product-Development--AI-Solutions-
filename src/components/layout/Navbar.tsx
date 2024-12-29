@@ -1,4 +1,3 @@
-// import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import logo from '../assets/ai-icon.png';
 import { ThemeToggle } from '../ThemeToggle';
@@ -10,6 +9,7 @@ export const Navbar = () => {
   const navLinks = [
     { path: '/', label: 'Home' },
     { path: '/articles', label: 'Articles' },
+    { path: '/services', label: 'Services' },
     { path: '/contact', label: 'Contact' },
     { path: '/events', label: 'Events' },
     { path: '/about', label: 'About' },
@@ -17,7 +17,7 @@ export const Navbar = () => {
   ];
 
   return (
-    <nav className="bg-white dark:bg-dark shadow-lg transition-colors">
+    <nav className="bg-white dark:bg-gray-900 shadow-lg transition-colors">
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex justify-between h-16">
           <div className="flex items-center">
@@ -36,8 +36,8 @@ export const Navbar = () => {
                 to={path}
                 className={`${
                   isActive(path)
-                    ? 'text-gray-600 font-semibold'
-                    : 'text-black-600 dark:text-gray-300 hover:text-primary dark:hover:text-highlight'
+                    ? 'text-gray-600 dark:text-gray-300 font-semibold'
+                    : 'text-gray-800 dark:text-gray-400 hover:text-primary dark:hover:text-highlight'
                 } transition-colors`}
               >
                 {label}
