@@ -7,15 +7,15 @@ import { Write } from '../../../pages/admin/Write';
 import { Posts } from '../../../pages/admin/Posts';
 import { Settings } from '../../../pages/admin/Settings';
 import { AdminGallery } from '../../../pages/admin/AdminGallery';
-// import { Navbar } from '../../layout/Navbar';
+
 
 export const AdminLayout = () => {
   return (
     <>
       <div className="min-h-screen bg-gray-100 dark:bg-gray-900">
-        
+        <Navbar />
         <AdminNavbar />
-        <div className="ml-64 p-8">
+        <div className="p-4 md:ml-64 md:p-8">
           <Routes>
             <Route index element={<Dashboard />} />
             <Route path="inquiries" element={<Inquiries />} />

@@ -42,13 +42,13 @@ export const AdminGallery = () => {
   };
 
   return (
-    <div className="space-y-8">
+    <div className="space-y-8 p-4 sm:p-6 lg:p-8">
       <div className="flex justify-between items-center">
         <h2 className="text-2xl font-bold dark:text-white">Gallery Management</h2>
       </div>
 
       {/* Upload Form */}
-      <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
+      <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-4 sm:p-6">
         <h3 className="text-lg font-semibold mb-4 dark:text-white">Upload New Media</h3>
         <form onSubmit={handleSubmit} className="space-y-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -128,7 +128,7 @@ export const AdminGallery = () => {
       </div>
 
       {/* Gallery Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {gallery.map((item) => (
           <div
             key={item.id}

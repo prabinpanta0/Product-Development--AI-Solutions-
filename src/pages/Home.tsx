@@ -17,29 +17,36 @@ export const Home = () => {
         }}
       >
         <div className="max-w-7xl mx-auto px-4 text-center">
-          <h1 className="text-5xl font-bold mb-6 tracking-wide">
-        <span className="block overflow-hidden whitespace-nowrap pr-2 animate-typewriter">
-          Empowering Businesses with AI Excellence 🚀
-        </span>
-        <style>{`
-          @keyframes typewriter {
-            from { width: 0; }
-            to { width: 100%; }
-          }
-          .animate-typewriter {
-            display: inline-block;
-            overflow: hidden;
-            white-space: nowrap;
-            border-right: 2px solid;
-            animation: typewriter 4s steps(40) 1s 1 normal both,
-          blinkTextCursor 500ms steps(40) infinite normal;
-          }
-          @keyframes blinkTextCursor {
-            from { border-right-color: rgba(255, 255, 255, 0.75); }
-            to { border-right-color: transparent; }
-          }
-        `}</style>
-          </h1>
+            <h1 className="text-4xl md:text-5xl font-bold mb-6 tracking-wide">
+              <span className="block overflow-hidden whitespace-nowrap pr-2 animate-typewriter">
+              Empowering Businesses with AI Excellence
+              </span>
+              <style>{`
+              @keyframes typewriter {
+                from { width: 0; }
+                to { width: 100%; }
+              }
+              .animate-typewriter {
+                display: inline-block;
+                overflow: hidden;
+                white-space: nowrap;
+                border-right: 2px solid;
+                animation: typewriter 4s steps(40) 1s 1 normal both,
+                blinkTextCursor 500ms steps(40) infinite normal;
+              }
+              @keyframes blinkTextCursor {
+                from { border-right-color: rgba(255, 255, 255, 0.75); }
+                to { border-right-color: transparent; }
+              }
+              @media (max-width: 768px) {
+                .animate-typewriter {
+                animation: none;
+                white-space: normal;
+                border: none;
+                }
+              }
+              `}</style>
+            </h1>
           <p className="text-xl mb-8 max-w-2xl mx-auto">
         At AI Solutions, we harness the power of artificial intelligence to drive innovation,
         efficiency, and growth for your business.
