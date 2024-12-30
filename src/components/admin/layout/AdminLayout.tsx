@@ -13,7 +13,6 @@ export const AdminLayout = () => {
   return (
     <>
       <div className="min-h-screen bg-gray-100 dark:bg-gray-900">
-        <Navbar />
         <AdminNavbar />
         <div className="p-4 md:ml-64 md:p-8">
           <Routes>
