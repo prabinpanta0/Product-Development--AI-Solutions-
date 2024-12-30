@@ -18,6 +18,8 @@ export const Footer = () => {
             <div className="space-y-2">
               <p className="flex items-center">
                 <RiMailLine className="mr-2 h-5 w-5" /> contact@ai-solutions.com
+              </p><p className="flex items-center">
+                <RiMailLine className="mr-2 h-5 w-5" /> info@aisolutions.com
               </p>
               <p className="flex items-center">
                 <RiPhoneLine className="mr-2 h-5 w-5" /> +44 123 456 7890

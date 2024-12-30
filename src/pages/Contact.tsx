@@ -179,6 +179,7 @@ export const Contact = () => {
             <div className="text-primary text-2xl mb-3">✉️</div>
             <h3 className="font-semibold mb-2 text-gray-900 dark:text-gray-100">Email</h3>
             <p className="text-gray-600 dark:text-gray-300">contact@ai-solutions.com</p>
+            <p className="text-gray-600 dark:text-gray-300">info@aisolutions.com</p>
           </div>
         </div>
 

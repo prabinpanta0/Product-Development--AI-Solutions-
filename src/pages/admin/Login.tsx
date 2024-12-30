@@ -35,6 +35,7 @@ export const Login = () => {
                 Username
               </label>
               <input
+              title='Username'
                 type="text"
                 required
                 value={credentials.username}
@@ -47,6 +48,7 @@ export const Login = () => {
                 Password
               </label>
               <input
+              title='Password'
                 type="password"
                 required
                 value={credentials.password}

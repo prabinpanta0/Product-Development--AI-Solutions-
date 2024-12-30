@@ -10,7 +10,6 @@ import { Events } from './pages/Events';
 import { About } from './pages/About';
 import { Gallery } from './pages/Gallery';
 import { AdminLayout } from './components/admin/layout/AdminLayout';
-import Services from './pages/Services';
 import { Login } from './pages/admin/Login';
 import { ProtectedRoute } from './components/auth/ProtectedRoute';
 import error from './components/assets/404.svg';
@@ -46,7 +45,7 @@ export const App = () => {
             <Route path="events" element={<Events />} />
             <Route path="about" element={<About />} />
             <Route path="gallery" element={<Gallery />} />
-            <Route path='services' element={<Services />} />
+
             {/* <Route for 404 Error */}
             <Route path="*" element={
               <div className="flex flex-col items-center justify-center min-h-screen text-center">
