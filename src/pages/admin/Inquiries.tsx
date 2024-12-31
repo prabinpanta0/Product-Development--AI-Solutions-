@@ -21,7 +21,7 @@ export const Inquiries = () => {
         {/* Title spans both columns */}
         <div style={{ gridColumn: '1 / -1', textAlign: 'center' }}>
           <CardTitle style={{ fontSize: '28px', fontWeight: 'bold', marginBottom: '16px', color: '#333' }}>
-            Inquiries
+            <span>Inquiries</span>
           </CardTitle>
         </div>
 
@@ -29,7 +29,7 @@ export const Inquiries = () => {
         <Card style={{ boxShadow: '0 4px 8px rgba(0,0,0,0.1)', borderRadius: '8px' }}>
           <CardHeader>
             <CardTitle style={{ fontSize: '22px', color: '#007bff', marginBottom: '12px' }}>
-              Contact Form Submissions
+              <span>Contact Form Submissions</span>
             </CardTitle>
           </CardHeader>
           <CardContent>
@@ -46,27 +46,27 @@ export const Inquiries = () => {
                   }}
                 >
                   <CardDescription style={{ color: '#555', marginBottom: '4px' }}>
-                    <strong>Date:</strong> {new Date(form.date).toLocaleDateString()}
+                    <strong><span>Date:</span></strong> <span>{new Date(form.date).toLocaleDateString()}</span>
                   </CardDescription>
                   <CardDescription style={{ color: '#555' }}>
-                    <strong>Email:</strong> {form.email}
+                    <strong><span>Email:</span></strong> <span>{form.email}</span>
                   </CardDescription>
                   <CardDescription style={{ color: '#555' }}>
-                    <strong>Phone:</strong> {form.phone}
+                    <strong><span>Phone:</span></strong> <span>{form.phone}</span>
                   </CardDescription>
                   <CardDescription style={{ color: '#555' }}>
-                    <strong>Company:</strong> {form.company}
+                    <strong><span>Company:</span></strong> <span>{form.company}</span>
                   </CardDescription>
                   <CardDescription style={{ color: '#555' }}>
-                    <strong>Country:</strong> {form.country}
+                    <strong><span>Country:</span></strong> <span>{form.country}</span>
                   </CardDescription>
                   <CardDescription style={{ color: '#555' }}>
-                    <strong>Job Title:</strong> {form.jobTitle}
+                    <strong><span>Job Title:</span></strong> <span>{form.jobTitle}</span>
                   </CardDescription>
                   <CardDescription style={{ color: '#555' }}>
-                    <strong>Job Details:</strong> {form.jobDetails}
+                    <strong><span>Job Details:</span></strong> <span>{form.jobDetails}</span>
                   </CardDescription>
-                  <CardDescription style={{ color: '#777' }}>{form.message}</CardDescription>
+                  <CardDescription style={{ color: '#777' }}><span>{form.message}</span></CardDescription>
                   <FaTrash
                     onClick={() => deleteContactForm(form.id)}
                     style={{
@@ -87,7 +87,7 @@ export const Inquiries = () => {
         <Card style={{ boxShadow: '0 4px 8px rgba(0,0,0,0.1)', borderRadius: '8px' }}>
           <CardHeader>
             <CardTitle style={{ fontSize: '22px', color: '#28a745', marginBottom: '12px' }}>
-              Customer Ratings
+              <span>Customer Ratings</span>
             </CardTitle>
           </CardHeader>
           <CardContent>
@@ -104,10 +104,12 @@ export const Inquiries = () => {
                   }}
                 >
                   <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '8px' }}>
-                    <CardDescription style={{ fontWeight: '500', color: '#333' }}>{rating.userName}</CardDescription>
-                    <CardDescription style={{ color: '#777' }}>
-                      {new Date(rating.date).toLocaleDateString()}
-                    </CardDescription>
+                    <span>
+                      <CardDescription style={{ fontWeight: '500', color: '#333' }}><span>{rating.userName}</span></CardDescription>
+                      <CardDescription style={{ color: '#777' }}>
+                        <span>{new Date(rating.date).toLocaleDateString()}</span>
+                      </CardDescription>
+                    </span>
                   </div>
                   <div style={{ display: 'flex', alignItems: 'center', marginBottom: '8px' }}>
                     {Array.from({ length: 5 }).map((_, i) => (
@@ -119,11 +121,11 @@ export const Inquiries = () => {
                           marginRight: '4px'
                         }}
                       >
-                        ★
+                        <span>★</span>
                       </span>
                     ))}
                   </div>
-                  <CardDescription style={{ color: '#555' }}>{rating.comment}</CardDescription>
+                  <CardDescription style={{ color: '#555' }}><span>{rating.comment}</span></CardDescription>
                   <FaTrash
                     onClick={() => deleteRating(rating.id)}
                     style={{

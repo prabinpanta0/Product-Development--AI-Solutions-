@@ -53,8 +53,9 @@ export const Posts = () => {
                     {article.title}
                   </h4>
                   <div className="flex items-center text-sm text-gray-500 dark:text-gray-400">
-                    <Calendar className="h-4 w-4 mr-1" />
+                    <span><Calendar className="h-4 w-4 mr-1" />
                     {new Date(article.date).toLocaleDateString()}
+                    </span> 
                   </div>
                   <button
                   title='Delete'
