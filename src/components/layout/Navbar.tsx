@@ -12,7 +12,6 @@ export const Navbar = () => {
     { path: '/', label: 'Home' },
     { path: '/articles', label: 'Articles' },
     { path: '/contact', label: 'Contact' },
-    { path: '/services', label: 'Services' },
     { path: '/events', label: 'Events' },
     { path: '/about', label: 'About' },
     { path: '/gallery', label: 'Gallery' },
