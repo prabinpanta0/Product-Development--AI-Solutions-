@@ -104,7 +104,7 @@ const getAIResponse = async (text: string) => {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${api}`,
+        'Authorization': `Bearer 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`,
       },
       body: JSON.stringify({
         model: "meta/llama-3.2-3b-instruct",

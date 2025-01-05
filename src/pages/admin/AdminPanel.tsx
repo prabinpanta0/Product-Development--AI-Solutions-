@@ -1,13 +1,13 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-import { AdminNavbar } from '../../components/admin/AdminNavbar';
+import { AdminNavbar } from '../../components/admin/layout/AdminNavbar';
 import { Dashboard } from './Dashboard';
 import { Inquiries } from './Inquiries';
 import { Write } from './Write';
 import { Posts } from './Posts';
 import { Settings } from './Settings';
 import { AdminGallery } from './AdminGallery';
-import { Navbar } from '../../components/Navbar';
+import { Navbar } from '../../components/layout/Navbar';
 
 export const AdminPanel = () => {
   return (

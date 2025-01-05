@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import {
   RiDashboardLine,
   RiMessage2Line,
@@ -11,12 +11,22 @@ import {
   RiMenuLine,
   RiCloseLine,
 } from 'react-icons/ri';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 // import { Navbar } from '../../layout/Navbar';
 
 export const AdminNavbar = () => {
   const location = useLocation();
   const [isOpen, setIsOpen] = useState(false);
+  const navigate = useNavigate();
+  const handleLogout = () => {
+    document.cookie = "isAuthenticated=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+    document.cookie = "isExpired=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+    navigate('/admin/login');
+    toast.success('Logged out successfully');
+  }
   const isActive = (path: string) => location.pathname === path;
+
 
   const navLinks = [
     { path: '/admin', icon: RiDashboardLine, label: 'Dashboard' },
@@ -48,7 +58,8 @@ export const AdminNavbar = () => {
               </Link>
             ))}
             <Link
-              to="/"
+              to="/admin/login"
+              onClick={() => document.cookie = "isAuthenticated=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;"}
               className="flex items-center space-x-2 p-3 hover:bg-gray-700 rounded-lg text-accent hover:text-white transition-colors"
             >
               <RiLogoutBoxLine className="h-5 w-5" />
@@ -87,7 +98,7 @@ export const AdminNavbar = () => {
                 <Link
                   to="/"
                   className="flex items-center space-x-2 p-3 hover:bg-gray-700 rounded-lg text-accent hover:text-white transition-colors"
-                  onClick={() => setIsOpen(false)}
+                  onClick={() => handleLogout}
                 >
                   <RiLogoutBoxLine className="h-5 w-5" />
                   <span>Logout</span>

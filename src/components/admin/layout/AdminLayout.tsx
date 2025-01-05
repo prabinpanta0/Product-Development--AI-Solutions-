@@ -9,7 +9,21 @@ import { Settings } from '../../../pages/admin/Settings';
 import { AdminGallery } from '../../../pages/admin/AdminGallery';
 
 
+import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+
 export const AdminLayout = () => {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const isAuthenticated = document.cookie.split('; ').find(row => row.startsWith('isAuthenticated='));
+    const isAuthenticatedValue = isAuthenticated ? isAuthenticated.split('=')[1] : null;
+    if (!isAuthenticatedValue) {
+      navigate('/admin/login');
+    }
+  }, [navigate]);
+
+
   return (
     <>
       <div className="min-h-screen bg-gray-100 dark:bg-gray-900">

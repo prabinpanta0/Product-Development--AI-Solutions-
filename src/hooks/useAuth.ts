@@ -12,9 +12,13 @@ export const useAuth = create<AuthStore>((set) => ({
     // Simple authentication for demo
     if (username === 'admin' && password === 'admin123') {
       set({ isAuthenticated: true });
+      document.cookie = "auth=true; path=/";
       return true;
     }
     return false;
   },
-  logout: () => set({ isAuthenticated: false }),
+  logout: () => {
+    set({ isAuthenticated: false });
+    document.cookie = "auth=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+  },
 }));

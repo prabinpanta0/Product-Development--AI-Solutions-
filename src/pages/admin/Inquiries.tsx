@@ -1,12 +1,40 @@
+import { useState } from 'react';
 import { useStore } from '../../store/store';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../../app/components/ui/card';
 import { FaTrash } from 'react-icons/fa';
 
 export const Inquiries = () => {
   const { contactForms, ratings, deleteContactForm, deleteRating } = useStore();
+  const [notification, setNotification] = useState<string | null>(null);
+
+  const handleDeleteContactForm = (id: string) => {
+    deleteContactForm(id);
+    setNotification('Inquiry successfully deleted');
+    setTimeout(() => setNotification(null), 3000);
+  };
+
+  const handleDeleteRating = (id: string) => {
+    deleteRating(id);
+    setNotification('Inquiry successfully deleted');
+    setTimeout(() => setNotification(null), 3000);
+  };
 
   return (
     <div style={{ padding: '24px', fontFamily: 'Arial, sans-serif', backgroundColor: '#f8f9fa' }}>
+      {notification && (
+        <div style={{
+          position: 'fixed',
+          top: '20px',
+          right: '20px',
+          backgroundColor: '#28a745',
+          color: '#fff',
+          padding: '10px 20px',
+          borderRadius: '5px',
+          boxShadow: '0 2px 4px rgba(0,0,0,0.1)'
+        }}>
+          {notification}
+        </div>
+      )}
       {/* Grid container */}
       <div
         className="container"
@@ -68,7 +96,7 @@ export const Inquiries = () => {
                   </CardDescription>
                   <CardDescription style={{ color: '#777' }}><span>{form.message}</span></CardDescription>
                   <FaTrash
-                    onClick={() => deleteContactForm(form.id)}
+                    onClick={() => handleDeleteContactForm(form.id)}
                     style={{
                       position: 'absolute',
                       top: '8px',
@@ -127,7 +155,7 @@ export const Inquiries = () => {
                   </div>
                   <CardDescription style={{ color: '#555' }}><span>{rating.comment}</span></CardDescription>
                   <FaTrash
-                    onClick={() => deleteRating(rating.id)}
+                    onClick={() => handleDeleteRating(rating.id)}
                     style={{
                       position: 'absolute',
                       top: '8px',

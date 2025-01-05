@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../../hooks/useAuth';
 import { Lock } from 'lucide-react';
 import toast from 'react-hot-toast';
-
 export const Login = () => {
   const [credentials, setCredentials] = useState({ username: '', password: '' });
   const navigate = useNavigate();
@@ -12,6 +11,7 @@ export const Login = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (login(credentials.username, credentials.password)) {
+      document.cookie = "isAuthenticated=true; path=/";
       toast.success('Login successful!');
       navigate('/admin/');
     } else {
@@ -35,7 +35,7 @@ export const Login = () => {
                 Username
               </label>
               <input
-              title='Username'
+                title='Username'
                 type="text"
                 required
                 value={credentials.username}
@@ -48,7 +48,7 @@ export const Login = () => {
                 Password
               </label>
               <input
-              title='Password'
+                title='Password'
                 type="password"
                 required
                 value={credentials.password}
