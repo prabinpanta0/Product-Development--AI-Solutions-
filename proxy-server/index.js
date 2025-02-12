@@ -23,7 +23,7 @@ app.use(
       // Add Authorization header dynamically from .env file
       const apiKey = process.env.NVIDIA_API_KEY;
       if (apiKey) {
-        proxyReq.setHeader('Authorization', `Bearer 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`);
+        proxyReq.setHeader('Authorization');
       } else {
         console.error('NVIDIA_API_KEY is not defined in .env file');
       }
